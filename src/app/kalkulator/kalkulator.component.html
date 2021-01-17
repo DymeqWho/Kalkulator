@@ -1,0 +1,21 @@
+<h1>Kalkulator</h1>
+<br />
+<label for="num1">First number </label>
+<input [(ngModel)]="number1" type="number" id="num1" name="num1" />
+<br />
+<label for="num2">Second number </label>
+<input [(ngModel)]="number2" type="number" id="num2" name="num2" />
+<br />
+<button type="button" id="add" (click)="add()">+</button>
+<button type="button" id="sub" (click)="subtract()">-</button>
+<button type="button" id="multi" (click)="multiply()">x</button>
+<button type="button" id="div" (click)="divide()">:</button>
+
+<hr />
+<!-- <p>number 1: {{number1}}</p>
+<p>number 2: {{number2}}</p> -->
+<p *ngIf="!isNaN(); else debil">result: {{ result }}</p>
+
+<ng-template #debil>
+  <p style="color: #ff0000">Nie dziel przez zero, debilu!</p>
+</ng-template>
